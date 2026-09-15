@@ -66,9 +66,9 @@ impl UpdateOptions {
             allow_prerelease: false,
             prefer_installer: true,
             silent_installer_args: vec![
-                "/SILENT".to_string(),
-                "/CLOSEAPPLICATIONS".to_string(),
-                "/RESTARTAPPLICATIONS".to_string(),
+                "/VERYSILENT".to_string(),
+                "/SUPPRESSMSGBOXES".to_string(),
+                "/FORCECLOSEAPPLICATIONS".to_string(),
             ],
             custom_user_agent: None,
         }

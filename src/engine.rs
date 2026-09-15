@@ -152,6 +152,8 @@ impl AutoUpdaterEngine {
                 self.options.silent_installer_args
             );
             UpdateInstaller::apply_installer(update_file, &self.options.silent_installer_args)?;
+            info!("Installer launched. Terminating current process to release file lock.");
+            std::process::exit(0);
         } else if filename.ends_with(".exe") {
             info!("Swapping binary in-place: {}", update_file.display());
             UpdateInstaller::apply_in_place_binary(update_file)?;
